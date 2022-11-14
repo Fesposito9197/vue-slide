@@ -32,20 +32,27 @@ const { createApp } = Vue
     },
     methods:{
         prevImage (){
-            this.tabindex--
+            
             if (this.tabindex < 0) {
                 this.tabindex = this.slides.length - 1
+            }else{
+                this.tabindex--
             }
         },
         nextImage () {
-            this.tabindex++
+            
             if (this.tabindex > this.slides.length - 1) {
                 this.tabindex = 0
+            }else{
+                this.tabindex++
             }
         },
         changeImage (index){
             this.tabindex = index
         }
+    },
+    mounted () {
+        setInterval(this.nextImage , 3000)
     } 
   }).mount('#app')
 
