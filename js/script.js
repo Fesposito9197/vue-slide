@@ -50,18 +50,10 @@ const { createApp } = Vue
         changeImage (index){
             this.tabindex = index
         },
-        mouseleave(){
-            clearInterval(this.timerThumbs)
-        },
-        mouseover(){
-            this.timerThumbs()
-        },
-        timerThumbs(){
-            setInterval(this.nextImage , 3000)
-        }
+      
     },
     mounted () {
-       
+       setInterval(this.nextImage , 3000)
     } 
   }).mount('#app')
 
